@@ -163,6 +163,9 @@ class CloudFormationTemplateContext
     Key: key
     Value: val
 
+
+
+
   #utility functions
   Join: (delimiter, args...) ->
     if args.length is 1 and (args[0] instanceof Array)
@@ -177,6 +180,9 @@ class CloudFormationTemplateContext
     'Fn::Base64': arg
   GetAZs: (arg) ->
     'Fn::GetAZs': arg
+  S3: (args...) ->
+    args.unshift('https://s3.amazonaws.com/')
+    @Join '', args
   Region: Ref: 'AWS::Region'
   StackName: Ref: 'AWS::StackName'
   InitScript: (arg) ->

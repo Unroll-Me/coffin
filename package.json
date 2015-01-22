@@ -32,7 +32,8 @@
       "coffee-script":  "1.1.x",
       "commander":      "0.4.x",
       "pkginfo":        "0.2.x",
-      "colors":         "0.5.x"
+      "colors":         "0.5.x",
+      "rootpath":       "~0.1.2"
   },
   "devDependencies": {
     "vows": "0.5.x"
