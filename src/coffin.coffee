@@ -159,9 +159,13 @@ class CloudFormationTemplateContext
 
   Description: (d) => @_description = d
 
-  Tag: (key, val) ->
-    Key: key
-    Value: val
+  Tag: (key, val, propagate) ->
+    result = {}
+    if propagate is true
+      result.PropagateAtLaunch = true
+    result.Key = key
+    result.Value = val
+    return (result)
 
 
 
