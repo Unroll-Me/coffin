@@ -180,6 +180,12 @@ class CloudFormationTemplateContext
     'Fn::Base64': arg
   GetAZs: (arg) ->
     'Fn::GetAZs': arg
+  Command: (args...) ->
+    {
+      command: @Join '', args
+      cwd: '~'
+      ignoreErrors: false
+    }
   S3: (args...) ->
     args.unshift('https://s3.amazonaws.com/')
     @Join '', args
