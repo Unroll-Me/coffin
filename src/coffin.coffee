@@ -159,6 +159,9 @@ class CloudFormationTemplateContext
 
   Description: (d) => @_description = d
 
+  Regex: (regex) ->
+    regex.toString().replace(/^\/|\/$/g, '')
+
   Tag: (key, val, propagate) ->
     result = {}
     if propagate is true
